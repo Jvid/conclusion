@@ -3,6 +3,9 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var htmlWebpackPlugin = require("html-webpack-plugin")
 
+var extractCSS = new ExtractTextPlugin('css/[name].css');
+var extractSCSS = new ExtractTextPlugin('css/[name].css');
+
 //环境变量的配置   online / dev
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev'
 
@@ -19,28 +22,29 @@ var getHtmlConfig = function (name, title) {
 
 var config = {
   entry: {
-    'common': ['./src/page/common/index.js'],
+    'common': ['./src/page/common/index.js','./node_modules/jquery/dist/jquery.js','./node_modules/marked/lib/marked.js'],
     'index': ['./src/page/index/index.js'],
+    'action1': ['./src/page/action1/index.js'],
 
   },
   output: {
-    path: './dist',
+    path: __dirname + '/dist',
     publicPath: '/dist',
     filename: 'js/[name].js'
   },
   module: {
     loaders: [
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-      },
-      {
         test: /\.string$/,
         loader: "html-loader"
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style", 'css!sass')
+        test: /\.css$/,
+        use: extractCSS.extract([ 'css-loader', 'postcss-loader' ])
+      },
+      {
+        test: /\.scss$/i,
+        use: extractSCSS.extract([ 'css-loader', 'sass-loader' ])
       },
       {
         test: /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/,
@@ -62,9 +66,10 @@ var config = {
       name: 'common',
       filename: 'js/base.js'
     }),
-    new ExtractTextPlugin("css/[name].css"),
+    extractCSS,
+    extractSCSS,
     new htmlWebpackPlugin(getHtmlConfig('index', '目录')),
-
+    new htmlWebpackPlugin(getHtmlConfig('action1', '一道光闪过')),
   ],
 }
 if ('dev' === WEBPACK_ENV) {
