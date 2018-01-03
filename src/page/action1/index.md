@@ -1,5 +1,5 @@
 
-## html
+### html
 
 ```HTML
 <div class="img">
@@ -7,7 +7,7 @@
 </div>
 ```
 
-## css
+### css
 ```css
 .img { 
 	display:block; 

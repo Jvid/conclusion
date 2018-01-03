@@ -1,0 +1,36 @@
+.header{
+	width: 100%;
+	height: 60px;
+	background: #253546;
+	color: #fff;
+	font-size: 14px;
+	.w{
+		border: none;
+	}
+	.breadcrumbs{
+		li{
+			display: inline-block;
+			line-height: 60px;
+			padding: 0 8px;
+			color: #fff;
+			cursor: default;
+			position: relative;
+			a{
+				color: #ccc;
+				text-decoration: none;
+				&:hover{
+					color: #fff;
+				}
+			}
+			&:before{
+				content: '/';
+				position: absolute;
+				left: -8px;
+				top: 0;
+			}
+			&:first-child:before{
+				content: ''
+			}
+		}
+	}
+}

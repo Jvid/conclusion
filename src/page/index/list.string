@@ -1,0 +1,4 @@
+{{~it:value:index}}
+	<li class="list-item"><a href="./view/{{=value.action}}">{{=value.name}}&nbsp;{{=index+1}}</a></li>
+	<li></li>
+{{~}}

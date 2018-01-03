@@ -7,12 +7,15 @@
   <title>知识总结 -- <%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-<div class="w">
-	<h1>目录</h1>
-	<ul>
-		<li><a href="./view/action1.html">一道光闪过</a></li>
-	</ul>
-</div>
- <!--  <%= require('html-loader!./layout/footer.html')  %> -->
+	<%= require('html-loader!./layout/header.html')  %>
+	<div class="action">
+		<div class="w list-wrap">
+			<h1 class="list-title">目录</h1>
+			<ul class="list">
+				
+			</ul>
+		</div>
+	</div>
+  <%= require('html-loader!./layout/footer.html')  %>
 </body>
 </html>

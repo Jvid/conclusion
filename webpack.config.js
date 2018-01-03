@@ -22,7 +22,7 @@ var getHtmlConfig = function (name, title) {
 
 var config = {
   entry: {
-    'common': ['./src/page/common/index.js','./node_modules/jquery/dist/jquery.js','./node_modules/marked/lib/marked.js'],
+    'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
     'action1': ['./src/page/action1/index.js'],
 
@@ -34,10 +34,11 @@ var config = {
   },
   module: {
     loaders: [
-      {
-        test: /\.string$/,
-        loader: "html-loader"
-      },
+      // {
+      //   test: /\.string$/,
+      //   loader: "html-loader"
+      // },
+      // { test: /\.js$/,loader: "babel-loader" },
       {
         test: /\.css$/,
         use: extractCSS.extract([ 'css-loader', 'postcss-loader' ])
@@ -49,6 +50,10 @@ var config = {
       {
         test: /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/,
         loader: 'url-loader?limit=1000&name=resource/[name].[ext]'
+      },
+      {
+        test: /\.(md|string)$/i,
+        loader: 'raw-loader'
       }
     ]
   },
@@ -57,7 +62,6 @@ var config = {
       node_modules: __dirname + '/node_modules',
       util: __dirname + '/src/util',
       page: __dirname + '/src/page',
-      service: __dirname + '/src/service',
       image: __dirname + '/src/image',
     }
   },

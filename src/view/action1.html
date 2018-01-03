@@ -5,12 +5,19 @@
 	<title>知识总结 -- <%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-	<div class="w">
-		<h1>一道光闪过</h1>
+<%= require('html-loader!./layout/header.html')  %> 
+	<div class="action">
+		<div class="w">
+			<h1 class="t-bg title">一道光闪过</h1>
+
+			<div class="result">
+				<div class="img">
+					<img src="<%= require('../image/sky.jpg') %>" alt="">
+				</div>
+			</div>
+			<%= require('html-loader!./layout/code-block.html')  %> 
+		</div>
 	</div>
-	<div class="img">
-		<img src="<%= require('../image/sky.jpg') %>" alt="">
-	</div>
-	<div class="w code-show"></div>
+	<%= require('html-loader!./layout/footer.html')  %> 
 </body>
 </html>
