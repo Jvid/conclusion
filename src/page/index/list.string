@@ -1,4 +1,4 @@
 {{~it:value:index}}
-	<li class="list-item"><a href="./view/{{=value.action}}">{{=value.name}}&nbsp;{{=index+1}}</a></li>
+	<li class="list-item"><a href="./{{=value.action}}">{{=value.name}}&nbsp;<span class="right-guide">{{=value.guide}}&nbsp;&nbsp;{{=index+1}}<span/></a></li>
 	<li></li>
 {{~}}

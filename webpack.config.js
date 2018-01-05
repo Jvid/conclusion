@@ -7,11 +7,13 @@ var extractCSS = new ExtractTextPlugin('css/[name].css');
 var extractSCSS = new ExtractTextPlugin('css/[name].css');
 
 //环境变量的配置   online / dev
-var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev'
+var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+//开发和打包时候不同的根目录
+var _publicPath = WEBPACK_ENV == 'dev' ? '/dist/':'../'
 
 var getHtmlConfig = function (name, title) {
   return {
-    template: './src/view/' + name + '.html',
+    template: path.resolve(__dirname,'./src/view/' + name + '.html'),
     filename: 'view/' + name + '.html',
     title: title,
     inject: true,
@@ -28,9 +30,13 @@ var config = {
 
   },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/dist',
+    path: path.resolve(__dirname + '/dist'),
+    publicPath: _publicPath,
     filename: 'js/[name].js'
+  },
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.web.js', '.js', '.jsx', '.json']
   },
   module: {
     loaders: [
@@ -59,10 +65,10 @@ var config = {
   },
   resolve: {
     alias: {
-      node_modules: __dirname + '/node_modules',
-      util: __dirname + '/src/util',
-      page: __dirname + '/src/page',
-      image: __dirname + '/src/image',
+      node_modules: path.resolve(__dirname + '/node_modules'),
+      util: path.resolve(__dirname + '/src/util'),
+      page: path.resolve(__dirname + '/src/page'),
+      image: path.resolve(__dirname + '/src/image'),
     }
   },
   plugins: [

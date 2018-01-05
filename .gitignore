@@ -1,1 +1,6 @@
 ./node_modules/
+.vscode/
+.tmp/
+npm-debug.log
+yarn-error.log
+.DS_Store
