@@ -1,0 +1,86 @@
+		label{
+			display: block;
+			margin: 15px auto;
+			text-align: center;
+		}
+		#maxNum,#questionNum{
+			width: 80px;
+			outline: none;
+		}
+		#btn{
+			max-width: 100px;
+			text-align: center;
+			margin: 0 auto;
+			padding: 10px 20px;
+			cursor: pointer;
+			border: 1px solid #aaa;
+		}
+		#btn:hover{
+			background: #eee;
+			color: #aaa;
+		}
+		#wrap,#wrap li{
+			list-style: none;
+		}
+		#wrap{
+			overflow: hidden;
+			width: 1010px;
+			margin: 0 auto;
+		}
+		#wrap li{
+			width: 300px;
+			height: 35px;
+			float: left;
+			margin-right: 50px;
+			line-height: 35px;
+			font-size: 15px;
+			&:nth-child(3n){
+				margin-right: 0px;
+			}
+		}
+		.res{
+			border: none;
+			outline: none;
+			width: 100px;
+			border-bottom: 1px solid #aaa;
+			margin-left: 5px;
+			text-align: center;
+		}
+		.qid{
+			display: inline-block;
+			width: 80px;
+			color: yellowgreen;
+			/*color: #c60023;*/
+		}
+		.wrong{
+			color: #c60023;
+		}
+		.submitBtn{
+			width: 80px;
+			height: 30px;
+			border: 1px solid #aaa;
+			cursor: pointer;
+			text-align: center;
+			line-height: 30px;
+			margin: 0 auto;
+		}
+		._result{
+			width: 300px;
+			margin: 0 auto;
+			overflow: hidden;
+			display: none;
+		}
+		.rightNum{
+			color: yellowgreen;
+			float: left;
+		}
+		.wrongNum{
+			color: #c60023;
+			float: right;
+		}
+		.rightNum i,.wrongNum i{
+			margin: 0 20px;
+		}
+		.rightRes{
+			display: none;
+		}

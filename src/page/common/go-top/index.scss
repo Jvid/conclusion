@@ -1,0 +1,28 @@
+.goTop{
+	// display: none;
+	position: fixed;
+	right: 50px;
+	bottom: -210px;
+	width: 29px;
+	padding: 5px 8px;
+	box-sizing: border-box;
+	text-align: center;
+	border: 1px solid #ddd;
+	color: #ccc;
+	background: #fff;
+	transition: all 0.3s;
+	cursor: pointer;
+	font-size: 12px;
+	-webkit-user-select: none;
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	-o-user-select: none;
+	user-select: none;
+	&:hover{
+		color: #aaa;
+	}
+	&.active{
+		// display: block;
+		bottom: 210px;
+	}
+}

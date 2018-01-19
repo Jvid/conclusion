@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>知识总结 -- <%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+	<%= require('html-loader!./layout/header.html') %>
+	<div class="action">
+		<div class="w w-bg">
+			<h1 class="t-bg title">hover的一些效果</h1>
+			<div class="dis">
+				<p>描述:</p>
+				<p>鼠标放到相应的元素上，查看相应的效果</p>
+			</div>
+			<div class="result">
+				<div class="hover-wrap">
+					<div class="hover-item hover1">
+						<p>鼠标放上来</p>
+					</div>
+					<div class="hover-item hover2">
+						<p>鼠标放上来</p>
+					</div>
+					<div class="hover-item hover3">
+						<p class="line-wrap">
+							<span class="line-item"></span>
+							<span class="line-item"></span>
+							<span class="line-item"></span>
+						</p>
+					</div>
+					<div class="hover-item hover4">
+						<p class="hover4-wrap">
+							鼠标放上来
+						</p>
+					</div>
+					<div class="hover-item hover5">
+						<p class="hover5-wrap">
+							鼠标放上来
+						</p>
+					</div>
+				</div>
+			</div>
+			<%= require('html-loader!./layout/code-block.html') %>
+		</div>
+	</div>
+	<%= require('html-loader!./layout/footer.html') %>
+	<%= require('html-loader!./layout/goTop.html') %>
+</body>
+</html>

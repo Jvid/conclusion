@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>知识总结 -- <%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+<%= require('html-loader!./layout/header.html')  %> 
+	<div class="action">
+		<div class="w w-bg">
+			<h1 class="t-bg title">加减题目</h1>
+			<div class="dis">
+				<p>描述:</p>
+				<p>首先,输入要做0到多少的加减法</p>
+				<p>其次,输入总共要出多少道题目</p>
+				<p>点击出题,会出相应条件的题目</p>
+				<p>答题完毕(不填的话默认为0),点击提交,错误的题目会以红色显示,并在题目的后面给出正确的答案,正确的题目显示绿色</p>
+				<p>上面会统计出正确多少,错误多少</p>
+			</div>
+			<div class="result">
+				<div id="displayWrap">
+	
+				</div>
+				<div class="inputWrap">
+					<label>
+						<span>请输入0-</span>
+						<input type="number" id="maxNum">
+						<span>的数之间的加减题！</span>
+					</label>
+					<label>
+						<span>请输入要做</span>
+						<input type="number" id="questionNum">
+						<span>道题！</span>
+					</label>
+					<div id="btn">出题</div>
+				</div>
+			</div>
+			<%= require('html-loader!./layout/code-block.html')  %> 
+			<%= require('html-loader!./layout/goTop.html')  %> 
+		</div>
+	</div>
+	<%= require('html-loader!./layout/footer.html')  %> 
+</body>
+</html>

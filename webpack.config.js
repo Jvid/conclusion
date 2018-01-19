@@ -27,6 +27,9 @@ var config = {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
     'action1': ['./src/page/action1/index.js'],
+    'action2': ['./src/page/action2/index.js'],
+    'action3': ['./src/page/action3/index.js'],
+    'action4': ['./src/page/action4/index.js'],
 
   },
   output: {
@@ -80,6 +83,10 @@ var config = {
     extractSCSS,
     new htmlWebpackPlugin(getHtmlConfig('index', '目录')),
     new htmlWebpackPlugin(getHtmlConfig('action1', '一道光闪过')),
+    new htmlWebpackPlugin(getHtmlConfig('action2', '加减题目')),
+    new htmlWebpackPlugin(getHtmlConfig('action3', 'CSS3 loading')),
+    new htmlWebpackPlugin(getHtmlConfig('action4', 'hover效果')),
+
   ],
 }
 if ('dev' === WEBPACK_ENV) {
